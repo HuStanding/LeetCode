@@ -15,6 +15,7 @@ public class Code_78_Subsets {
         List<List<Integer>> res = new ArrayList<>();
         dfs(nums,new ArrayList<>(),0,res);
         return res;
+
     }
 
     public static void dfs(int[] nums,List<Integer> list,int start,List<List<Integer>> res){
