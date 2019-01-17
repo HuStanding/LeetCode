@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * @author huzhu
  * @date created in 2019-01-17 16:34
- * @explaination
+ * @explaination 数组（包含重复元素）的子集
  */
 public class Code_90_Subsets2 {
     public static void main(String[] args) {
