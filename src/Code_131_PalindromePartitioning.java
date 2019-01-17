@@ -22,6 +22,7 @@ public class Code_131_PalindromePartitioning {
         if(s.length() == 0){
             res.add(new ArrayList<>(list));
             return;
+
         }
         for(int i = 0;i < s.length();i++){
             if(isPalindrome(s,0,i)){
