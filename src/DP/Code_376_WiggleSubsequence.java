@@ -7,28 +7,27 @@ package DP;
  */
 public class Code_376_WiggleSubsequence {
     public static void main(String[] args) {
-        System.out.println(wiggleMaxLength(new int[]{1,17,5,10,13,15,10,5,16,8}));
+        System.out.println(wiggleMaxLength(new int[]{1, 17, 5, 10, 13, 15, 10, 5, 16, 8}));
 
     }
 
-    public static int wiggleMaxLength(int[] nums){
-        if(nums.length < 2){
+    public static int wiggleMaxLength(int[] nums) {
+        if (nums.length < 2) {
             return nums.length;
         }
 
-        int len = nums.length;
-        int flag = 0;
-        for(int i = 1;i < nums.length;i++){
-            if(nums[i] == nums[i - 1]){
-                len--;
-            }else if(nums[i] > nums[i - 1]){
-                if(flag == 1) len--;
-                else flag = 1;
-            }else{
-                if(flag == -1) len--;
-                else flag = -1;
+        int flag = -1, length = 1, prev = nums[0];
+        int res;
+        for (int i = 0; i < nums.length; ++i) {
+            res = nums[i] > prev ? 1 : 0;
+            if (nums[i] == prev) continue;
+            if (flag != res) {
+                flag = res;
+                ++length;
             }
+            prev = nums[i];
         }
-        return len;
+
+        return length;
     }
 }
